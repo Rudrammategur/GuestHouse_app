@@ -1,0 +1,439 @@
+/* ==========================================================
+   Main Dashboard
+========================================================== */
+
+.main-dashboard{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        180deg,
+        #faf5ff 0%,
+        var(--page-bg) 45%
+    );
+
+}
+
+
+/* ==========================================================
+   Header
+========================================================== */
+
+.main-dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px clamp(20px,4vw,56px);
+
+    background:linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
+    color:#fff;
+
+    box-shadow:var(--shadow);
+
+}
+
+.main-dashboard-header .brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.main-dashboard-header .brand img{
+
+    height:52px;
+
+    width:auto;
+
+}
+
+.main-dashboard-header .brand-text h1{
+
+    margin:0;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+}
+
+.main-dashboard-header .brand-text p{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+.main-dashboard-header .header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+
+/* ==========================================================
+   User Card
+========================================================== */
+
+.user-chip{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(8px);
+
+}
+
+.user-chip .avatar{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.22);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    color:#fff;
+
+}
+
+.user-chip span{
+
+    font-weight:600;
+
+    font-size:14px;
+
+}
+
+
+/* ==========================================================
+   Welcome Section
+========================================================== */
+
+.main-dashboard-welcome{
+
+    max-width:1600px;
+
+    margin:auto;
+
+    padding:42px clamp(20px,4vw,56px) 32px;
+
+}
+
+.main-dashboard-welcome h2{
+
+    margin:0 0 10px;
+
+    font-size:34px;
+
+    color:var(--primary-dark);
+
+    font-weight:700;
+
+}
+
+.main-dashboard-welcome p{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+
+/* ==========================================================
+   Module Cards
+========================================================== */
+
+.module-cards{
+
+    max-width:1600px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:24px;
+
+    padding:0 clamp(20px,4vw,56px) 50px;
+
+}
+
+.module-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.module-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-lg);
+
+    border-color:var(--primary);
+
+}
+
+.module-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:var(--card-color);
+
+}
+
+
+/* ==========================================================
+   Icon
+========================================================== */
+
+.module-icon-wrap{
+
+    width:68px;
+
+    height:68px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:18px;
+
+    background:var(--card-soft);
+
+    color:var(--card-color);
+
+    font-size:30px;
+
+    margin-bottom:22px;
+
+}
+
+
+/* ==========================================================
+   Card Content
+========================================================== */
+
+.module-card h2{
+
+    margin-bottom:10px;
+
+    color:var(--primary-dark);
+
+    font-size:21px;
+
+    font-weight:700;
+
+}
+
+.module-card p{
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+    font-size:14px;
+
+    min-height:52px;
+
+}
+
+.card-arrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:24px;
+
+    color:var(--card-color);
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+.module-card:hover .card-arrow{
+
+    transform:translateX(6px);
+
+}
+
+
+/* ==========================================================
+   Module Colors
+========================================================== */
+
+.module-card.gh{
+
+    --card-color:var(--primary);
+
+    --card-soft:#f5edff;
+
+}
+
+.module-card.tr{
+
+    --card-color:#0284c7;
+
+    --card-soft:#e0f2fe;
+
+}
+
+.module-card.adm{
+
+    --card-color:#8b5cf6;
+
+    --card-soft:#f3e8ff;
+
+}
+
+.module-card.inv{
+
+    --card-color:#059669;
+
+    --card-soft:#ecfdf5;
+
+}
+
+.module-card.leave{
+
+    --card-color:#f59e0b;
+
+    --card-soft:#fffbeb;
+
+}
+
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media(max-width:992px){
+
+    .main-dashboard-header{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .module-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .main-dashboard-welcome{
+
+        padding-bottom:24px;
+
+    }
+
+    .main-dashboard-welcome h2{
+
+        font-size:28px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .main-dashboard-header{
+
+        padding:18px;
+
+    }
+
+    .user-chip{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}

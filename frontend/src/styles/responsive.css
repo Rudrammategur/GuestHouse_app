@@ -1,0 +1,129 @@
+/* ==========================================================
+   Large Desktop
+========================================================== */
+
+@media (max-width:1400px){
+
+    .grid-4{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Laptop
+========================================================== */
+
+@media (max-width:1200px){
+
+    .grid-4{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .grid-3{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Tablet
+========================================================== */
+
+@media (max-width:992px){
+
+    .grid-4,
+    .grid-3,
+    .grid-2{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .erp-page{
+
+        padding:24px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media (max-width:768px){
+
+    .erp-page{
+
+        padding:16px;
+
+    }
+
+    .flex-between{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:16px;
+
+    }
+
+    .flex-wrap{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .w-mobile{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Small Mobile
+========================================================== */
+
+@media (max-width:576px){
+
+    h1{
+
+        font-size:26px;
+
+    }
+
+    h2{
+
+        font-size:22px;
+
+    }
+
+    h3{
+
+        font-size:18px;
+
+    }
+
+    .erp-card{
+
+        padding:18px;
+
+    }
+
+}

@@ -1,0 +1,103 @@
+.charge-summary{
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    box-shadow:var(--shadow-sm);
+
+    overflow:hidden;
+
+}
+
+.charge-summary-header{
+
+    padding:18px 24px;
+
+    border-bottom:1px solid var(--border);
+
+    background:#fafafa;
+
+}
+
+.charge-summary-header h3{
+
+    margin:0;
+
+    color:var(--text);
+
+    font-size:18px;
+
+}
+
+.charge-summary-body{
+
+    padding:20px 24px;
+
+}
+
+.charge-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 0;
+
+    border-bottom:1px dashed #e5e7eb;
+
+}
+
+.charge-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.charge-row span:first-child{
+
+    color:var(--text-light);
+
+}
+
+.charge-row span:last-child{
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.charge-total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 24px;
+
+    background:#f8fafc;
+
+    border-top:2px solid var(--border);
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.charge-footer{
+
+    padding:18px 24px;
+
+    border-top:1px solid var(--border);
+
+}

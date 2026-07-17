@@ -1,0 +1,93 @@
+.info-card{
+
+    background:#fff;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    overflow:hidden;
+
+}
+
+.info-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    padding:22px 24px;
+
+    border:1px solid #c9cdd3;
+
+}
+
+.info-card-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+}
+
+.info-card-title h3{
+
+    margin:0;
+
+    font-size:18px;
+
+    color:#172554;
+
+    font-weight:700;
+
+}
+
+.info-card-title p{
+
+    margin:0;
+
+    font-size:13px;
+
+    color:#64748b;
+
+}
+
+.info-card-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.info-card-body{
+
+    padding:22px 24px;
+
+}
+
+.info-card-footer{
+
+    padding:16px 24px;
+
+    background:#fafafa;
+
+    border-top:1px solid #bbbdc9;
+
+}
+
+.info-card + .info-card{
+
+    margin-top:8px;
+
+}

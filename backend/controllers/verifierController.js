@@ -1,0 +1,578 @@
+const sql = require("mssql");
+const { poolPromise } = require("../config/db");
+const {
+  getWorkflowHistory,
+  changeWorkflowStatus
+} = require("../services/WorkflowService");
+
+const { getEmployeeById } = require("../services/employeeService");
+
+
+// ========================================
+// Dashboard
+// ========================================
+
+
+exports.getDashboardCounts = async (req, res) => {
+
+    try {
+
+        const pool = await poolPromise;
+
+        const currentUser = req.user;
+
+        const result = await pool.request()
+
+            .input(
+                "EmployeeID",
+                sql.VarChar,
+                currentUser.EmployeeId
+            )
+
+            .query(`
+
+SELECT
+
+COUNT(*) AS TotalApplications,
+
+SUM(CASE WHEN BookingStatus='Submitted' THEN 1 ELSE 0 END) AS PendingApplications,
+
+SUM(CASE WHEN BookingStatus='Verified' THEN 1 ELSE 0 END) AS VerifiedApplications,
+
+SUM(CASE WHEN BookingStatus='Rejected' THEN 1 ELSE 0 END) AS RejectedApplications,
+
+SUM(CASE
+        WHEN BookingStatus IN ('Verified','Rejected')
+        THEN 1
+        ELSE 0
+    END) AS AllProcessedApplications
+
+FROM GuestHouseRoomBookings
+
+WHERE
+
+    AssignedVerifierID = @EmployeeID
+
+    AND IsActive = 1
+
+    AND BookingStatus IN
+    (
+        'Submitted',
+        'Verified',
+        'Rejected'
+    )
+
+`);
+
+        res.json(result.recordset[0]);
+
+    }
+
+    catch (err) {
+
+        console.log(err);
+
+        res.status(500).json(err);
+
+    }
+
+};
+
+exports.getPendingApplications = async (req, res) => {
+
+  try {
+
+    const currentUser = req.user;
+
+    const pool = await poolPromise;
+
+    const result = await pool.request()
+
+      .input(
+        "EmployeeID",
+        sql.VarChar,
+        currentUser.EmployeeId
+      )
+
+      .query(`
+
+SELECT
+
+    b.GHBookingID,
+
+    b.GHRBookingNo,
+
+    b.GuestName,
+
+    gt.GuestTypeName,
+
+    b.TotalRoomsReq,
+
+    b.BookedBy,
+
+    b.ArrivalDateTime,
+
+    b.DepartureDateTime,
+
+    b.BookingDateTime,
+
+    b.BookingStatus
+
+FROM GuestHouseRoomBookings b
+
+LEFT JOIN GuestTypeMaster gt
+
+ON b.GuestTypeID = gt.GuestTypeID
+
+WHERE
+
+    b.AssignedVerifierID = @EmployeeID
+
+    AND b.BookingStatus = 'Submitted'
+
+    AND b.IsActive = 1
+
+ORDER BY
+
+    b.BookingDateTime DESC
+
+`);
+
+    res.json(result.recordset);
+
+  }
+
+  catch (err) {
+
+    console.log(err);
+
+    res.status(500).json({
+
+      success: false,
+
+      message: err.message
+
+    });
+
+  }
+
+};
+
+
+exports.getApplications = async (req, res) => {
+
+    try {
+
+        const pool = await poolPromise;
+
+        const currentUser = req.user;
+
+        const result = await pool.request()
+
+            .input(
+                "EmployeeID",
+                sql.VarChar,
+                currentUser.EmployeeId
+            )
+
+            .query(`
+
+SELECT
+
+    b.GHBookingID,
+
+    b.GHRBookingNo,
+
+    b.GuestName,
+
+    gt.GuestTypeName,
+
+    b.TotalRoomsReq,
+
+    b.BookedBy,
+
+    b.ArrivalDateTime,
+
+    b.DepartureDateTime,
+
+    b.BookingDateTime,
+
+    b.BookingStatus
+
+FROM GuestHouseRoomBookings b
+
+LEFT JOIN GuestTypeMaster gt
+
+ON gt.GuestTypeID = b.GuestTypeID
+
+WHERE
+
+    b.AssignedVerifierID = @EmployeeID
+
+    AND b.IsActive = 1
+
+    AND b.BookingStatus IN
+    (
+        'Submitted',
+        'Verified',
+        'Rejected'
+    )
+
+ORDER BY
+
+    b.BookingDateTime DESC
+
+`);
+
+        res.json(result.recordset);
+
+    }
+
+    catch (err) {
+
+        console.log(err);
+
+        res.status(500).json({
+
+            success: false,
+
+            message: err.message
+
+        });
+
+    }
+
+};
+
+
+exports.getApplication = async (req, res) => {
+
+  try {
+
+    const pool = await poolPromise;
+
+    const bookingId = req.params.bookingId;
+
+    // Booking Details
+    const bookingResult = await pool.request()
+
+      .input(
+        "BookingID",
+        sql.VarChar,
+        bookingId
+      )
+
+      .query(`
+
+SELECT
+
+    b.*,
+
+    gt.GuestTypeName,
+
+    gh.GuestHouseName
+
+FROM GuestHouseRoomBookings b
+
+LEFT JOIN GuestTypeMaster gt
+ON gt.GuestTypeID = b.GuestTypeID
+
+LEFT JOIN GuestHouseMaster gh
+ON gh.GuestHouseID = b.GuestHouseID
+
+WHERE b.GHBookingID = @BookingID
+
+`);
+
+    if (bookingResult.recordset.length === 0) {
+
+      return res.status(404).json({
+
+        success: false,
+
+        message: "Application not found."
+
+      });
+
+    }
+
+    // Room Requirements
+    const roomResult = await pool.request()
+
+      .input(
+        "BookingID",
+        sql.VarChar,
+        bookingId
+      )
+
+      .query(`
+
+SELECT
+
+    d.RoomTypeID,
+
+    rt.RoomTypeName,
+
+    d.NoOfRooms
+
+FROM GuestHouseBookingRoomDetails d
+
+LEFT JOIN RoomTypeMaster rt
+ON rt.RoomTypeID = d.RoomTypeID
+
+WHERE d.GHBookingID = @BookingID
+
+`);
+
+    const application = bookingResult.recordset[0];
+
+    application.AssignedVerifier =
+      getEmployeeById(application.AssignedVerifierID);
+
+    application.AssignedApprover =
+      getEmployeeById(application.AssignedApproverID);
+
+    application.AssignedAllocator =
+      getEmployeeById(application.AssignedAllocatorID);
+
+    application.RoomRequirements = roomResult.recordset;
+
+    res.json(application);
+
+  }
+
+  catch (err) {
+
+    console.log(err);
+
+    res.status(500).json({
+
+      success: false,
+
+      message: err.message
+
+    });
+
+  }
+
+};
+
+// ========================================
+// Verify
+// ========================================
+
+exports.verifyApplication = async (req, res) => {
+
+  const transaction =
+    new sql.Transaction(await poolPromise);
+
+  try {
+
+    await transaction.begin();
+
+    const data = req.body;
+
+    const currentUser = req.user;
+
+    console.log("Active user", req.user);
+
+    const bookingId =
+      req.params.bookingId;
+
+    const remarks =
+      req.body.remarks || "";
+
+    await changeWorkflowStatus(
+      transaction,
+      {
+        bookingId,
+        previousStatus: "Submitted",
+        currentStatus: "Verified",
+        actionName: "Verify",
+        authorityRole: "Verifier",
+        authorityName: currentUser.EmployeeName,
+        actionBy: currentUser.EmployeeId,
+        remarks
+      }
+    );
+
+    await transaction.commit();
+
+    res.json({
+
+      success: true,
+
+      status: "Verified",
+
+      message: "Application Verified"
+
+    });
+
+  }
+
+  catch (err) {
+
+    if (transaction._aborted !== true) {
+
+      try {
+
+        await transaction.rollback();
+
+      }
+
+      catch (rollbackError) {
+
+        console.log("Rollback skipped:", rollbackError.message);
+
+      }
+
+    }
+
+    console.log("Original Error:", err);
+
+    res.status(500).json({
+
+      success: false,
+
+      message: err.message
+
+    });
+
+  }
+};
+
+
+exports.viewDocument = async (req, res) => {
+
+  try {
+
+    const pool = await poolPromise;
+
+    const bookingId = req.params.bookingId;
+
+    const result = await pool.request()
+
+      .input(
+        "BookingID",
+        sql.VarChar,
+        bookingId
+      )
+
+      .query(`
+
+SELECT SupportingDoc
+
+FROM GuestHouseRoomBookings
+
+WHERE GHBookingID=@BookingID
+
+`);
+
+    if (
+      result.recordset.length === 0 ||
+      !result.recordset[0].SupportingDoc
+    ) {
+
+      return res.status(404).send("Document not found.");
+
+    }
+
+    const buffer = result.recordset[0].SupportingDoc;
+
+    if (
+      buffer[0] === 0x89 &&
+      buffer[1] === 0x50 &&
+      buffer[2] === 0x4E &&
+      buffer[3] === 0x47
+    ) {
+
+      res.setHeader("Content-Type", "image/png");
+
+    }
+    else {
+
+      res.setHeader("Content-Type", "application/pdf");
+
+    }
+
+    res.send(buffer);
+
+  }
+
+  catch (err) {
+
+    console.log(err);
+
+    res.status(500).json({
+
+      success: false,
+
+      message: err.message
+
+    });
+
+  }
+
+};
+
+
+// ========================================
+// Reject
+// ========================================
+
+exports.rejectApplication = async (req, res) => {
+
+  const transaction =
+    new sql.Transaction(await poolPromise);
+
+  try {
+
+    await transaction.begin();
+
+    const data = req.body;
+
+    const currentUser = req.user;
+
+    const bookingId =
+      req.params.bookingId;
+
+    const remarks =
+      req.body.remarks;
+
+    await changeWorkflowStatus(
+    transaction,
+    {
+        bookingId,
+        previousStatus: "Submitted",
+        currentStatus: "Rejected",
+        actionName: "Reject",
+        authorityRole: "Verifier",
+        authorityName: currentUser.EmployeeName,
+        actionBy: currentUser.EmployeeId,
+        remarks
+    }
+);
+
+    await transaction.commit();
+
+    res.json({
+
+      success: true,
+
+      status: "Rejected",
+
+      message: "Application Rejected"
+
+    });
+
+  }
+
+  catch (err) {
+
+    await transaction.rollback();
+
+    res.status(500).json(err);
+
+  }
+
+};

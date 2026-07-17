@@ -1,0 +1,528 @@
+/* ==========================================================
+   My Requests Page
+========================================================== */
+
+.requests-page{
+
+    max-width:1600px;
+
+    margin:0 auto;
+
+    padding:32px clamp(20px,3vw,48px) 60px;
+
+}
+
+
+/* ==========================================================
+   Header
+========================================================== */
+
+.requests-page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-bottom:28px;
+
+}
+
+.requests-page-header h2{
+
+    margin:0 0 6px;
+
+    color:var(--primary-dark);
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.requests-page-header p{
+
+    margin:0;
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+
+/* ==========================================================
+   New Request Button
+========================================================== */
+
+.new-request-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.new-request-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================================
+   Filter Bar
+========================================================== */
+
+.requests-filter-bar{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:26px;
+
+}
+
+.filter-chip{
+
+    padding:10px 18px;
+
+    border:1px solid var(--border);
+
+    border-radius:999px;
+
+    background:var(--surface);
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.filter-chip:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+}
+
+.filter-chip.active{
+
+    background:var(--primary-light);
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   Cards
+========================================================== */
+
+.cards-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+
+    gap:22px;
+
+}
+
+.request-card{
+
+    position:relative;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow-sm);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    overflow:hidden;
+
+}
+
+.request-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow-lg);
+
+    border-color:var(--primary);
+
+}
+
+.request-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:var(--status-color);
+
+}
+
+
+/* ==========================================================
+   Status Colors
+========================================================== */
+
+.request-card.status-submitted{
+
+    --status-color:var(--warning);
+
+}
+
+.request-card.status-verified{
+
+    --status-color:var(--success);
+
+}
+
+.request-card.status-approved{
+
+    --status-color:var(--info);
+
+}
+
+.request-card.status-allocated{
+
+    --status-color:var(--purple);
+
+}
+
+.request-card.status-rejected{
+
+    --status-color:var(--danger);
+
+}
+
+.request-card.status-checkedin{
+
+    --status-color:#10b981;
+
+}
+
+.request-card.status-checkedout{
+
+    --status-color:#6366f1;
+
+}
+
+
+/* ==========================================================
+   Card Header
+========================================================== */
+
+.request-card-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+}
+
+.request-card-ref{
+
+    font-size:12px;
+
+    color:var(--text-light);
+
+    font-family:monospace;
+
+}
+
+.request-card-name{
+
+    margin-top:4px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+
+/* ==========================================================
+   Date Section
+========================================================== */
+
+.request-card-dates{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:16px 0;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+.date-sep{
+
+    width:26px;
+
+    height:2px;
+
+    background:var(--border);
+
+}
+
+.request-card-room{
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+}
+
+
+/* ==========================================================
+   Progress Tracker
+========================================================== */
+
+.request-progress{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    margin-top:20px;
+
+    padding-top:20px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.progress-step{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:6px;
+
+    position:relative;
+
+    font-size:11px;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-weight:600;
+
+}
+
+.progress-step::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:9px;
+
+    left:50%;
+
+    width:100%;
+
+    height:2px;
+
+    background:var(--border);
+
+}
+
+.progress-step:last-child::after{
+
+    display:none;
+
+}
+
+.step-dot{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--surface);
+
+    border:2px solid var(--border);
+
+    position:relative;
+
+    z-index:2;
+
+    transition:.25s;
+
+}
+
+.progress-step.done{
+
+    color:var(--success-text);
+
+}
+
+.progress-step.done .step-dot{
+
+    background:var(--success);
+
+    border-color:var(--success);
+
+}
+
+.progress-step.active{
+
+    color:var(--primary);
+
+}
+
+.progress-step.active .step-dot{
+
+    background:var(--primary-light);
+
+    border-color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media(max-width:992px){
+
+    .cards-grid{
+
+        grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .requests-page{
+
+        padding:24px 16px 40px;
+
+    }
+
+    .requests-page-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .new-request-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .cards-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .requests-filter-bar{
+
+        gap:8px;
+
+    }
+
+    .filter-chip{
+
+        flex:1;
+
+        text-align:center;
+
+    }
+
+}

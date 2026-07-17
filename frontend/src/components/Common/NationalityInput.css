@@ -1,0 +1,13 @@
+.nationality-container {
+
+    display: flex;
+    gap: 15px;
+    width: 100%;
+
+}
+
+.nationality-container .form-group {
+
+    flex: 1;
+
+}

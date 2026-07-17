@@ -1,0 +1,479 @@
+/* ==========================================
+   Guest Checkout Page
+========================================== */
+
+.checkout-container{
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:30px;
+
+    background:var(--bg);
+
+    min-height:100vh;
+
+}
+
+
+/* ==========================================
+   Header
+========================================== */
+
+.checkout-header{
+
+    margin-bottom:28px;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
+    color:white;
+
+    box-shadow:var(--shadow);
+
+}
+
+.checkout-header h1{
+
+    margin:0;
+
+    font-size:30px;
+
+    color:white;
+
+}
+
+.checkout-header p{
+
+    margin-top:8px;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+/* ==========================================
+   Layout
+========================================== */
+
+.checkout-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:24px;
+
+    margin-bottom:24px;
+
+}
+
+
+/* ==========================================
+   Cards
+========================================== */
+
+.checkout-card,
+
+.checklist-card,
+
+.billing-summary{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.checkout-card h3,
+
+.billing-summary h3,
+
+.checklist-card h3{
+
+    margin:0 0 18px;
+
+    color:var(--primary-dark);
+
+}
+
+
+/* ==========================================
+   Details
+========================================== */
+
+.detail-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.detail-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.detail-row span{
+
+    color:var(--text-light);
+
+}
+
+.detail-row strong{
+
+    color:var(--text);
+
+}
+
+
+/* ==========================================
+   Room Table
+========================================== */
+
+.rooms-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.rooms-table thead{
+
+    background:linear-gradient(
+        90deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
+}
+
+.rooms-table th{
+
+    padding:13px;
+
+    color:white;
+
+    text-align:left;
+
+    font-size:13px;
+
+}
+
+.rooms-table td{
+
+    padding:13px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.rooms-table tbody tr:hover{
+
+    background:#faf5ff;
+
+}
+
+
+/* ==========================================
+   Charges
+========================================== */
+
+.charges-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+.charge-field{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.charge-field label{
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.charge-field input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:white;
+
+    transition:.25s;
+
+}
+
+.charge-field input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(106,27,154,.12);
+
+}
+
+
+/* ==========================================
+   Billing Summary
+========================================== */
+
+.billing-summary{
+
+    background:var(--primary-light);
+
+}
+
+.total-payable{
+
+    margin-top:15px;
+
+    font-size:36px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================
+   Checklist
+========================================== */
+
+.checklist-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px 0;
+
+}
+
+.checklist-item input{
+
+    transform:scale(1.15);
+
+}
+
+
+/* ==========================================
+   Action Buttons
+========================================== */
+
+.checkout-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:16px;
+
+    margin-top:28px;
+
+}
+
+.receipt-btn,
+
+.checkout-btn{
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.receipt-btn{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+}
+
+.receipt-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.checkout-btn{
+
+    background:var(--success);
+
+    color:white;
+
+}
+
+.checkout-btn:hover{
+
+    filter:brightness(.92);
+
+}
+
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:992px){
+
+    .checkout-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .charges-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .checkout-container{
+
+        padding:18px;
+
+    }
+
+    .checkout-header{
+
+        padding:20px;
+
+    }
+
+    .checkout-actions{
+
+        flex-direction:column;
+
+    }
+
+    .checkout-actions button{
+
+        width:100%;
+
+    }
+
+}
+
+.checkout-page{
+
+    padding:30px;
+
+}
+
+.section-block{
+
+    margin-bottom:24px;
+
+}
+
+.section-block h4{
+
+    margin-bottom:18px;
+
+    color:var(--primary-dark);
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:12px;
+
+    cursor:pointer;
+
+}
+
+.check-item input{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+.action-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}

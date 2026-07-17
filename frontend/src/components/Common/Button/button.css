@@ -1,0 +1,163 @@
+.erp-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+/* Sizes */
+
+.erp-btn-sm{
+
+    padding:8px 14px;
+
+    font-size:13px;
+
+}
+
+.erp-btn-md{
+
+    padding:10px 18px;
+
+    font-size:14px;
+
+}
+
+.erp-btn-lg{
+
+    padding:12px 24px;
+
+    font-size:15px;
+
+}
+
+/* Width */
+
+.erp-btn-full{
+
+    width:100%;
+
+}
+
+/* Primary */
+
+.erp-btn-primary{
+
+    background:var(--primary);
+
+    color:rgb(10, 10, 10);
+
+}
+
+.erp-btn-primary:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* Secondary */
+
+.erp-btn-secondary{
+
+    background:#ECEFF1;
+
+    color:var(--text);
+
+}
+
+/* Success */
+
+.erp-btn-success{
+
+    background:var(--success);
+
+    color:white;
+
+}
+
+/* Danger */
+
+.erp-btn-danger{
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+/* Warning */
+
+.erp-btn-warning{
+
+    background:var(--warning);
+
+    color:white;
+
+}
+
+/* Outline */
+
+.erp-btn-outline{
+
+    border:1px solid var(--primary);
+
+    background:white;
+
+    color:var(--primary);
+
+}
+
+/* Disabled */
+
+.erp-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* Spinner */
+
+.erp-btn-spinner{
+
+    width:16px;
+
+    height:16px;
+
+    border:2px solid rgba(255,255,255,.4);
+
+    border-top-color:white;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}

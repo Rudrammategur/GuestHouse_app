@@ -1,0 +1,398 @@
+/* ==========================================
+   Guest House Preview Page
+========================================== */
+
+.preview-container{
+
+    width:min(1400px,95%);
+
+    margin:30px auto 60px;
+
+}
+
+
+/* ==========================================
+   Header
+========================================== */
+
+.preview-header{
+
+    margin-bottom:30px;
+
+    padding:28px 32px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
+    color:white;
+
+    box-shadow:var(--shadow);
+
+}
+
+.preview-header h1{
+
+    margin:0 0 10px;
+
+    font-size:34px;
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.preview-header p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.88);
+
+    font-size:14px;
+
+}
+
+
+/* ==========================================
+   Preview Cards
+========================================== */
+
+.preview-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:28px;
+
+    margin-bottom:24px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.preview-card h2{
+
+    margin:0 0 22px;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--primary-dark);
+
+    font-size:20px;
+
+}
+
+
+/* ==========================================
+   Information Grid
+========================================== */
+
+.preview-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:22px;
+
+}
+
+.preview-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.preview-item label{
+
+    margin-bottom:8px;
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.05em;
+
+}
+
+.preview-item span{
+
+    min-height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:14px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--bg-2);
+
+    color:var(--text);
+
+    font-size:15px;
+
+}
+
+.full-width{
+
+    grid-column:1/-1;
+
+}
+
+
+/* ==========================================
+   Supporting Document
+========================================== */
+
+.document-card{
+
+    margin-top:18px;
+
+}
+
+.document-preview{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:20px;
+
+}
+
+.preview-image{
+
+    width:100%;
+
+    max-width:650px;
+
+    max-height:420px;
+
+    object-fit:contain;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================
+   Document Buttons
+========================================== */
+
+.document-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:16px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.view-btn,
+
+.download-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.view-btn{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+}
+
+.download-btn{
+
+    background:var(--success);
+
+    color:white;
+
+}
+
+.view-btn:hover,
+
+.download-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================
+   Footer Buttons
+========================================== */
+
+.button-container{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:16px;
+
+    margin-top:36px;
+
+    flex-wrap:wrap;
+
+}
+
+.edit-btn,
+
+.submit-btn{
+
+    min-width:160px;
+
+    padding:13px 28px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.edit-btn{
+
+    background:white;
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+}
+
+.edit-btn:hover{
+
+    background:var(--bg-2);
+
+}
+
+.submit-btn{
+
+    border:none;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+    .preview-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .full-width{
+
+        grid-column:auto;
+
+    }
+
+    .button-container{
+
+        flex-direction:column;
+
+    }
+
+    .edit-btn,
+
+    .submit-btn{
+
+        width:100%;
+
+    }
+
+    .preview-header{
+
+        padding:22px;
+
+    }
+
+    .preview-header h1{
+
+        font-size:28px;
+
+    }
+
+}

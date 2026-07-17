@@ -1,0 +1,400 @@
+
+/* ==========================================
+   Page
+========================================== */
+
+.erp-page{
+
+    min-height:100vh;
+
+    padding:32px;
+
+    background:var(--page-bg);
+
+}
+
+
+/* ==========================================
+   Container
+========================================== */
+
+.erp-container{
+
+    width:100%;
+
+    max-width:1600px;
+
+    margin:0 auto;
+
+}
+
+
+/* ==========================================
+   Card
+========================================== */
+
+.erp-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    padding:24px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================
+   Grid
+========================================== */
+
+.erp-grid{
+
+    display:grid;
+
+    gap:24px;
+
+    align-items:start;
+
+}
+
+.grid-2{
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+}
+
+.grid-3{
+
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+}
+
+.grid-4{
+
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+}
+
+
+/* ==========================================
+   Flex Utilities
+========================================== */
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.flex-wrap{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.flex-end{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+}
+
+.flex-start{
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+}
+
+
+/* ==========================================
+   Alignment
+========================================== */
+
+.items-start{
+
+    align-items:flex-start;
+
+}
+
+.items-center{
+
+    align-items:center;
+
+}
+
+.items-end{
+
+    align-items:flex-end;
+
+}
+
+.justify-start{
+
+    justify-content:flex-start;
+
+}
+
+.justify-center{
+
+    justify-content:center;
+
+}
+
+.justify-end{
+
+    justify-content:flex-end;
+
+}
+
+
+/* ==========================================
+   Gap Utilities
+========================================== */
+
+.gap-xs{
+
+    gap:8px;
+
+}
+
+.gap-sm{
+
+    gap:12px;
+
+}
+
+.gap-md{
+
+    gap:20px;
+
+}
+
+.gap-lg{
+
+    gap:30px;
+
+}
+
+.gap-xl{
+
+    gap:40px;
+
+}
+
+
+/* ==========================================
+   Margin Utilities
+========================================== */
+
+.mt-1{
+
+    margin-top:8px;
+
+}
+
+.mt-2{
+
+    margin-top:16px;
+
+}
+
+.mt-3{
+
+    margin-top:24px;
+
+}
+
+.mt-4{
+
+    margin-top:32px;
+
+}
+
+.mb-1{
+
+    margin-bottom:8px;
+
+}
+
+.mb-2{
+
+    margin-bottom:16px;
+
+}
+
+.mb-3{
+
+    margin-bottom:24px;
+
+}
+
+.mb-4{
+
+    margin-bottom:32px;
+
+}
+
+.ml-auto{
+
+    margin-left:auto;
+
+}
+
+.mr-auto{
+
+    margin-right:auto;
+
+}
+
+
+/* ==========================================
+   Padding Utilities
+========================================== */
+
+.p-1{
+
+    padding:8px;
+
+}
+
+.p-2{
+
+    padding:16px;
+
+}
+
+.p-3{
+
+    padding:24px;
+
+}
+
+.p-4{
+
+    padding:32px;
+
+}
+
+
+/* ==========================================
+   Width Utilities
+========================================== */
+
+.w-100{
+
+    width:100%;
+
+}
+
+.h-100{
+
+    height:100%;
+
+}
+
+.full-width{
+
+    grid-column:1/-1;
+
+}
+
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:1200px){
+
+    .grid-4{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .grid-3,
+
+    .grid-2{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .erp-page{
+
+        padding:24px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .erp-page{
+
+        padding:16px;
+
+    }
+
+    .flex-between{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:16px;
+
+    }
+
+    .flex-wrap{
+
+        flex-direction:column;
+
+    }
+
+}

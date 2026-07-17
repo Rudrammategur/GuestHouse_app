@@ -1,0 +1,278 @@
+/* ==========================================
+   Guest House Application View
+========================================== */
+
+.application-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+
+/* ==========================================
+   Content Grid
+========================================== */
+
+.application-grid-layout{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:24px;
+
+    align-items:start;
+
+}
+
+.application-grid-layout .full-width{
+
+    grid-column:1/-1;
+
+}
+
+
+/* ==========================================
+   Tabs
+========================================== */
+
+.application-tabs{
+
+    display:flex;
+
+    gap:8px;
+
+    padding:0 4px;
+
+    border-bottom:1px solid var(--border);
+
+    margin-bottom:24px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+}
+
+.application-tabs::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.application-tabs button{
+
+    position:relative;
+
+    padding:14px 20px;
+
+    background:transparent;
+
+    border:none;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.application-tabs button:hover{
+
+    color:var(--primary);
+
+}
+
+.application-tabs button.active{
+
+    color:var(--primary);
+
+}
+
+.application-tabs button.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:-1px;
+
+    height:3px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        var(--secondary)
+
+    );
+
+    border-radius:10px 10px 0 0;
+
+}
+
+
+/* ==========================================
+   Page Actions
+========================================== */
+
+.page-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* ==========================================
+   Supporting Documents
+========================================== */
+
+.document-box{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:18px 20px;
+
+    border:2px dashed rgba(106,27,154,.18);
+
+    border-radius:14px;
+
+    background:#faf5ff;
+
+    transition:.25s;
+
+}
+
+.document-box:hover{
+
+    border-color:var(--primary);
+
+    background:#f5edff;
+
+}
+
+.document-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+}
+
+.document-title{
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.document-subtitle{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================
+   Workflow Section
+========================================== */
+
+.workflow-assignment{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+@media(max-width:992px){
+
+    .application-grid-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .workflow-assignment{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .application-container{
+
+        gap:20px;
+
+    }
+
+    .application-tabs{
+
+        gap:6px;
+
+    }
+
+    .application-tabs button{
+
+        padding:12px 16px;
+
+        font-size:13px;
+
+    }
+
+    .page-actions{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+    }
+
+    .document-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}

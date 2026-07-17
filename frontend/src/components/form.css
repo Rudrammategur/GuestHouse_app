@@ -1,0 +1,81 @@
+.erp-form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:20px;
+
+}
+
+.erp-label{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:var(--text);
+
+}
+
+.required{
+
+    color:var(--danger);
+
+    margin-left:4px;
+
+}
+
+.erp-input{
+
+    width:100%;
+
+    padding:12px 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    transition:.2s;
+
+    background:white;
+
+}
+
+.erp-input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(123,31,162,.15);
+
+}
+
+.erp-input:disabled{
+
+    background:#f3f4f6;
+
+    cursor:not-allowed;
+
+}
+
+.erp-input-error{
+
+    border-color:var(--danger);
+
+}
+
+.erp-error{
+
+    margin-top:6px;
+
+    color:var(--danger);
+
+    font-size:13px;
+
+}

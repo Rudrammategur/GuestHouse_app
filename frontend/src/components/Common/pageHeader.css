@@ -1,0 +1,111 @@
+.erp-page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    gap:20px;
+
+}
+
+.erp-page-header-left{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.erp-back-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:white;
+
+    box-shadow:var(--shadow-sm);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.2s;
+
+}
+
+.erp-back-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.erp-breadcrumb{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+    margin-bottom:8px;
+
+}
+
+.erp-page-header h1{
+
+    margin:0;
+
+    font-size:30px;
+
+}
+
+.erp-page-header p{
+
+    margin-top:6px;
+
+    color:var(--text-light);
+
+}
+
+.erp-page-header-right{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+}
+
+@media(max-width:768px){
+
+.erp-page-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.erp-page-header-right{
+
+width:100%;
+
+justify-content:flex-start;
+
+}
+
+}

@@ -1,0 +1,23 @@
+.erp-page{
+
+    min-height:100vh;
+
+    background:var(--page-bg);
+
+    padding:24px;
+
+}
+
+.erp-container{
+
+    max-width:1500px;
+
+    margin:auto;
+
+}
+
+.erp-container-fluid{
+
+    width:100%;
+
+}

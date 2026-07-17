@@ -1,0 +1,31 @@
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.section-header h3{
+
+    margin:0;
+
+    font-size:18px;
+
+    color:#172554;
+
+}
+
+.section-header p{
+
+    margin-top:4px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+}

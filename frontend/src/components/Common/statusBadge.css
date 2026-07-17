@@ -1,0 +1,127 @@
+.status-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+/* ==============================
+Sizes
+============================== */
+
+.status-sm{
+
+    padding:4px 10px;
+
+    font-size:12px;
+
+}
+
+.status-md{
+
+    padding:6px 14px;
+
+    font-size:13px;
+
+}
+
+.status-lg{
+
+    padding:8px 18px;
+
+    font-size:14px;
+
+}
+
+/* ==============================
+Status Colors
+============================== */
+
+.status-submitted{
+
+    background:#E3F2FD;
+
+    color:#1565C0;
+
+}
+
+.status-pending{
+
+    background:#FFF8E1;
+
+    color:#F57F17;
+
+}
+
+.status-verified{
+
+    background:#E8F5E9;
+
+    color:#2E7D32;
+
+}
+
+.status-approved{
+
+    background:#E8F5E9;
+
+    color:#1B5E20;
+
+}
+
+.status-rejected{
+
+    background:#FFEBEE;
+
+    color:#C62828;
+
+}
+
+.status-allocated{
+
+    background:#EDE7F6;
+
+    color:#6A1B9A;
+
+}
+
+.status-checked-in{
+
+    background:#E0F7FA;
+
+    color:#006064;
+
+}
+
+.status-checked-out{
+
+    background:#F3E5F5;
+
+    color:#4A148C;
+
+}
+
+.status-cancelled{
+
+    background:#ECEFF1;
+
+    color:#37474F;
+
+}
+
+.status-default{
+
+    background:#EEEEEE;
+
+    color:#424242;
+
+}

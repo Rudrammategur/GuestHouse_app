@@ -1,0 +1,13 @@
+.erp-card{
+
+    background:#fff;
+
+    border-radius:16px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow-sm);
+
+    border:1px solid var(--border);
+
+}

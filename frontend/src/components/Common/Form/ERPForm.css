@@ -1,0 +1,119 @@
+.erp-form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+}
+
+.erp-form-group label{
+
+    font-weight:600;
+
+    color:#2f3b52;
+
+}
+
+.required{
+
+    color:red;
+
+    margin-left:4px;
+
+}
+
+.erp-input{
+
+    width:100%;
+
+    padding:10px 12px;
+
+    border:1px solid #cfd8dc;
+
+    border-radius:6px;
+
+    font-size:14px;
+
+    transition:.2s;
+
+    box-sizing:border-box;
+
+}
+
+.erp-input:focus{
+
+    outline:none;
+
+    border-color:#1976d2;
+
+    box-shadow:0 0 4px rgba(25,118,210,.3);
+
+}
+
+.full-width{
+
+    grid-column:1/-1;
+
+}
+
+.erp-form-modal{
+
+    width:850px;
+
+    max-width:95%;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+}
+
+.erp-form-header{
+
+    padding:18px 25px;
+
+    background:#f5f7fa;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.erp-form-header h2{
+
+    margin:0;
+
+    color:#1f3c88;
+
+}
+
+.erp-form-body{
+
+    padding:25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.erp-form-footer{
+
+    padding:20px 25px;
+
+    border-top:1px solid #ddd;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+}

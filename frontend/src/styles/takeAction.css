@@ -1,0 +1,703 @@
+/* ==========================================================
+   Take Action Page
+========================================================== */
+
+.action-page{
+
+    max-width:1500px;
+
+    margin:auto;
+
+    padding:32px;
+
+}
+
+
+/* ==========================================================
+   Header
+========================================================== */
+
+.action-page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:30px;
+
+}
+
+.action-page-header h1{
+
+    margin:0;
+
+    color:var(--primary-dark);
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.action-page-header p{
+
+    margin-top:6px;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+
+/* ==========================================================
+   Back Button
+========================================================== */
+
+.back-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--primary-light);
+
+    color:var(--primary-dark);
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.back-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   Layout
+========================================================== */
+
+.action-layout{
+
+    display:grid;
+
+    grid-template-columns:2.2fr 420px;
+
+    gap:28px;
+
+    align-items:start;
+
+}
+
+
+/* ==========================================================
+   Application Details
+========================================================== */
+
+.application-detail-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+}
+
+.detail-card-header{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
+    color:white;
+
+    padding:24px 28px;
+
+}
+
+.detail-card-header .eyebrow{
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    opacity:.85;
+
+}
+
+.detail-card-header h2{
+
+    margin-top:8px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.detail-card-body{
+
+    padding:28px;
+
+}
+
+
+/* ==========================================================
+   Details Grid
+========================================================== */
+
+.detail-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:22px;
+
+}
+
+.detail-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+}
+
+.detail-item label{
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.6px;
+
+    color:var(--text-light);
+
+    font-weight:600;
+
+}
+
+.detail-item span{
+
+    font-size:15px;
+
+    color:var(--text);
+
+    font-weight:600;
+
+}
+
+.detail-full-row{
+
+    margin-top:24px;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#faf8ff;
+
+}
+
+.detail-full-row label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:var(--primary-dark);
+
+    font-weight:600;
+
+}
+
+.detail-full-row p{
+
+    margin:0;
+
+    color:var(--text);
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   Action Card
+========================================================== */
+
+.action-card{
+
+    background:var(--surface);
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    position:sticky;
+
+    top:20px;
+
+}
+
+.action-card h3{
+
+    margin-bottom:22px;
+
+    padding-bottom:16px;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--primary-dark);
+
+}
+
+
+/* ==========================================================
+   Status
+========================================================== */
+
+.current-status{
+
+    margin-bottom:24px;
+
+}
+
+.current-status label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:var(--text-light);
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================================
+   Decision
+========================================================== */
+
+.decision-section{
+
+    margin-bottom:24px;
+
+}
+
+.decision-section>label{
+
+    display:block;
+
+    margin-bottom:14px;
+
+    color:var(--text-light);
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.radio-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.radio-option{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+    padding:14px 16px;
+
+    border:2px solid var(--border);
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.radio-option:hover{
+
+    border-color:var(--primary);
+
+    background:#faf8ff;
+
+}
+
+.radio-option.selected.verify{
+
+    background:#ecfdf5;
+
+    border-color:var(--success);
+
+}
+
+.radio-option.selected.approve{
+
+    background:#faf5ff;
+
+    border-color:var(--primary);
+
+}
+
+.radio-option.selected.reject{
+
+    background:#fef2f2;
+
+    border-color:var(--danger);
+
+}
+
+.radio-option input{
+
+    margin-top:2px;
+
+    accent-color:var(--primary);
+
+}
+
+.radio-label{
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.radio-desc{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+    margin-top:3px;
+
+}
+
+
+/* ==========================================================
+   Remarks
+========================================================== */
+
+.remarks-section{
+
+    margin-bottom:24px;
+
+}
+
+.remarks-section label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:var(--text-light);
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.remarks-section textarea{
+
+    width:100%;
+
+    min-height:120px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#fafafa;
+
+    resize:vertical;
+
+    transition:.25s;
+
+}
+
+.remarks-section textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(115,32,125,.12);
+
+    background:white;
+
+}
+
+
+/* ==========================================================
+   Submit Button
+========================================================== */
+
+.submit-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 24px rgba(115,32,125,.25);
+
+}
+
+.submit-btn.reject{
+
+    background:linear-gradient(
+        135deg,
+        #b91c1c,
+        #dc2626
+    );
+
+}
+
+
+/* ==========================================================
+   Audit Trail
+========================================================== */
+
+.audit-trail{
+
+    margin-top:30px;
+
+}
+
+.audit-trail h4{
+
+    margin-bottom:16px;
+
+    color:var(--primary-dark);
+
+}
+
+.audit-item{
+
+    display:flex;
+
+    gap:14px;
+
+    padding-bottom:20px;
+
+}
+
+.audit-dot{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.audit-dot .dot{
+
+    width:11px;
+
+    height:11px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+}
+
+.audit-dot .line{
+
+    width:2px;
+
+    flex:1;
+
+    background:var(--border);
+
+    margin-top:6px;
+
+}
+
+.audit-item:last-child .line{
+
+    display:none;
+
+}
+
+.audit-content{
+
+    flex:1;
+
+}
+
+.audit-actor{
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.audit-action{
+
+    margin-top:3px;
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+}
+
+.audit-time{
+
+    margin-top:4px;
+
+    font-size:12px;
+
+    color:#94a3b8;
+
+}
+
+.audit-remark{
+
+    margin-top:10px;
+
+    background:#faf8ff;
+
+    border-left:4px solid var(--primary);
+
+    padding:10px 14px;
+
+    border-radius:8px;
+
+    color:var(--text);
+
+    font-style:italic;
+
+}
+
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media(max-width:1100px){
+
+    .action-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .action-card{
+
+        position:relative;
+
+        top:0;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .action-page{
+
+        padding:18px;
+
+    }
+
+    .action-page-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .detail-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

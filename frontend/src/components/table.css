@@ -1,0 +1,92 @@
+.erp-table-wrapper{
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:var(--shadow-md);
+
+    /* overflow:hidden; */
+
+}
+
+.erp-table-search{
+
+    width:300px;
+
+    padding:10px 14px;
+
+    margin:20px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+}
+
+.erp-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.erp-table thead{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.erp-table th{
+
+    padding:14px;
+
+    text-align:left;
+
+}
+
+.erp-table td{
+
+    padding:14px;
+
+    border-bottom:1px solid var(--border);
+
+    vertical-align:middle;
+
+}
+
+.erp-table th:last-child,
+.erp-table td:last-child{
+    min-width:180px;
+    text-align:center;
+    white-space:nowrap;
+}
+
+.erp-table tbody tr:hover{
+
+    background:#fafafa;
+
+}
+
+.erp-pagination{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:20px;
+
+}
+
+.erp-pagination button{
+
+    padding:8px 16px;
+
+}

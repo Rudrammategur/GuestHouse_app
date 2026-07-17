@@ -1,0 +1,231 @@
+/* ==========================================
+   Room Availability Page
+========================================== */
+
+.admin-room-page{
+
+    padding:28px;
+
+    background:var(--bg);
+
+    min-height:100vh;
+
+}
+
+/* ==========================================
+   Filter Section
+========================================== */
+
+.calendar-filters{
+
+    display:flex;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+    align-items:flex-end;
+
+    margin-bottom:24px;
+
+    padding:20px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+/* ==========================================
+   Filter Controls
+========================================== */
+
+.calendar-filters label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.calendar-filters select,
+
+.calendar-filters input{
+
+    min-width:220px;
+
+    padding:11px 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:white;
+
+    color:var(--text);
+
+    font-size:14px;
+
+    transition:.25s;
+
+}
+
+.calendar-filters select:focus,
+
+.calendar-filters input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(106,27,154,.12);
+
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.calendar-filters button{
+
+    padding:11px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.calendar-filters button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   Calendar Container
+========================================== */
+
+.calendar-container{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   Legend
+========================================== */
+
+.calendar-legend{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+
+}
+
+.legend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    color:var(--text);
+
+}
+
+.legend-color{
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:4px;
+
+}
+
+.legend-available{
+
+    background:var(--success);
+
+}
+
+.legend-booked{
+
+    background:var(--danger);
+
+}
+
+.legend-maintenance{
+
+    background:var(--warning);
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+    .calendar-filters{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .calendar-filters select,
+
+    .calendar-filters input,
+
+    .calendar-filters button{
+
+        width:100%;
+
+    }
+
+}

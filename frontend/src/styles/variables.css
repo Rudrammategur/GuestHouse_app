@@ -1,0 +1,167 @@
+:root{
+
+/* ===================================================
+   BRAND COLORS (IIT Dharwad Theme)
+=================================================== */
+
+--primary:#7B1FA2;
+--primary-light:#9C27B0;
+--primary-dark:#5E1680;
+
+--secondary:#5C6BC0;
+--secondary-light:#EEF2FF;
+
+
+/* ===================================================
+   SURFACE COLORS
+=================================================== */
+
+--page-bg:#F5F7FA;
+--surface:#FFFFFF;
+--card-bg:#FFFFFF;
+--sidebar-bg:#FFFFFF;
+
+--surface-hover:#FAF8FF;
+--surface-light:#F9FAFB;
+
+
+/* ===================================================
+   TEXT
+=================================================== */
+
+--text:#1F2937;
+--text-light:#6B7280;
+--text-muted:#9CA3AF;
+--heading:#311B92;
+
+
+/* ===================================================
+   BORDER
+=================================================== */
+
+--border:#E5E7EB;
+--border-light:#F1F5F9;
+
+
+/* ===================================================
+   STATUS COLORS
+=================================================== */
+
+--success:#2E7D32;
+--success-bg:#E8F5E9;
+
+--warning:#F9A825;
+--warning-bg:#FFF8E1;
+
+--danger:#D32F2F;
+--danger-bg:#FDECEC;
+
+--info:#0288D1;
+--info-bg:#E3F2FD;
+
+
+/* ===================================================
+   ROOM STATUS COLORS
+=================================================== */
+
+--submitted:#F9A825;
+--verified:#4CAF50;
+--approved:#2196F3;
+--allocated:#7B1FA2;
+--checkedin:#00897B;
+--checkedout:#757575;
+--cancelled:#D32F2F;
+
+
+/* ===================================================
+   SHADOWS
+=================================================== */
+
+--shadow-sm:
+0 2px 6px rgba(0,0,0,.05);
+
+--shadow-md:
+0 4px 12px rgba(0,0,0,.08);
+
+--shadow-lg:
+0 12px 28px rgba(0,0,0,.14);
+
+
+/* ===================================================
+   BORDER RADIUS
+=================================================== */
+
+--radius-xs:4px;
+--radius-sm:8px;
+--radius-md:12px;
+--radius-lg:18px;
+--radius-xl:24px;
+--radius-round:999px;
+
+
+/* ===================================================
+   SPACING
+=================================================== */
+
+--space-xs:4px;
+--space-sm:8px;
+--space-md:16px;
+--space-lg:24px;
+--space-xl:32px;
+--space-xxl:48px;
+
+
+/* ===================================================
+   TYPOGRAPHY
+=================================================== */
+
+--font-family:
+"Inter",
+"Segoe UI",
+Roboto,
+sans-serif;
+
+--font-xs:12px;
+--font-sm:13px;
+--font-md:15px;
+--font-lg:18px;
+--font-xl:24px;
+--font-xxl:30px;
+
+
+/* ===================================================
+   TRANSITIONS
+=================================================== */
+
+--transition-fast:.15s;
+--transition:.25s;
+--transition-slow:.35s;
+
+
+/* ===================================================
+   COMPONENT SIZES
+=================================================== */
+
+--header-height:72px;
+
+--sidebar-width:260px;
+
+--sidebar-collapse-width:80px;
+
+--card-padding:24px;
+
+--input-height:44px;
+
+--button-height:42px;
+
+
+/* ===================================================
+   Z INDEX
+=================================================== */
+
+--z-sidebar:1000;
+--z-header:1010;
+--z-modal:1050;
+--z-toast:1100;
+
+}

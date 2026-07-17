@@ -1,0 +1,95 @@
+.erp-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.form-section{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    box-shadow:var(--shadow-sm);
+
+    overflow:hidden;
+
+}
+
+.form-section-header{
+
+    padding:20px 24px;
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.form-section-header h3{
+
+    margin:0;
+
+}
+
+.form-section-header p{
+
+    margin-top:6px;
+
+    color:var(--text-light);
+
+}
+
+.form-section-body{
+
+    padding:24px;
+
+}
+
+.form-grid{
+
+    display:grid;
+
+    gap:20px;
+
+}
+
+.form-grid-2{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.form-grid-3{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.form-grid-4{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+@media(max-width:992px){
+
+    .form-grid-2,
+
+    .form-grid-3,
+
+    .form-grid-4{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

@@ -1,0 +1,33 @@
+.workflow-timeline{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.timeline-item{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+}
+
+.timeline-circle{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#621771;
+
+    margin-top:6px;
+
+}
